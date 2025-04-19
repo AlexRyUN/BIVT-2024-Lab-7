@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,8 +61,8 @@ namespace Lab_7
             {
                 get
                 {
-                    if (_penalties == null) return true;
-                    bool expelled = true;
+                    if (_penalties == null || _penalties.Length == 0) return false;
+                    bool expelled = false;
                     for (int i = 0; i < _penalties.Length; i++)
                     {
                         if (_penalties[i] == 10)
@@ -129,7 +129,7 @@ namespace Lab_7
             {
                 get
                 {
-                    if (_penalties == null) return false;
+                    if (_penalties == null || _penalties.Length == 0) return false;
                     int foul5matches = 0;
                     for (int i = 0; i < _penalties.Length; i++)
                     {
